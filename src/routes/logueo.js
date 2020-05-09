@@ -44,7 +44,7 @@ router.get('/signin', (req, res, next) => {
 
 
 router.post('/signin', passport.authenticate('local-signin', {
-  successRedirect: '/profile',
+  successRedirect: '/perfecto',
   failureRedirect: '/signin',
   failureFlash: true
 }));
@@ -64,6 +64,10 @@ function conversion(dato1){
   ("00" + dato1.getSeconds()).slice(-2);
   return dateStr
 }
+
+router.get('/perfecto', isAuthenticated, (req,res,next) => {
+  res.redirect('/profile');
+});
 
 router.get('/profile',isAuthenticated, async (req, res, next) => {
   
@@ -269,7 +273,7 @@ router.get('/logout', async (req, res, next) => {
 });
 
 //Funcion autenticacion
-function isAuthenticated(req, res, next) {
+async function isAuthenticated(req, res, next) {
   if(req.isAuthenticated()) {
     return next();
   }
