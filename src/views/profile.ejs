@@ -1,0 +1,29 @@
+  
+<%- layout('layouts/main') %>
+
+<div id="perfil" >
+    <div style="padding: 1%;">
+    <h1 style="text-align: center;">Buenos días <%= info.nombre %>!</h1>
+
+    <% if (!(info.nombre).localeCompare("fabio")){%>
+    
+        <br><p style="font-size: 20px;">Tu ultima conexión: <%= info.ult_conexion %></p>
+        <p style="font-size: 20px;">Ultima conexión de Julieta: <%= info.data %></p>
+        <br>
+    <% } %>
+    
+    <p style="font-size: 20px;">Este es tu perfil de usuario de Tmotn.</p>
+    <p style="font-size: 20px;">Con esta cuenta puedes subir imagenes y/o videos al servidor de Tmotn</p>
+
+    <p style="font-size: 20px;">Y luego puedes verlo en la pagina principal de Tmotn! </p>
+    </div>
+</div>
+
+<style>
+    #perfil{
+        background: white;
+        width:90%;
+        margin-left: 5%;
+        margin-top: 3%;
+    }
+</style>

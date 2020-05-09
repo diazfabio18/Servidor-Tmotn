@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/logo_pagina_tmotn.png" type="image/x-icon">
+  <meta name="theme-color" content="orange">
+  <title>Tmotn Admin</title>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  -->
+ 
+</head>
+<body>
+
+  <div class="containerq">
+  <!-- NAVIGATION -->
+  <div class="headerq">
+
+    <div class="logo">
+      <img src="/logo_pagina_tmotn.png"  alt="" >
+      <strong><a href="/">TMOTN</a></strong>
+  </div>
+
+  <div id="spaces"></div>
+
+    <ul class="menus">
+      <% if (!user) { %>
+        <!-- Si no hay ususario logueado-->
+      <li><a href="/signin">Login</a></li>
+      <li><a href="/profile">Perfil</a></li>
+      <li><a href="https://diazfabio18.github.io/Tmotn/">Tmotn</a></li>
+      <!-- <a href="/signup">Signup</a> -->
+      <% } else { %>
+        <!-- Si hay usuario logueado-->
+        <li><a href="/logout">Salir</a></li>
+        <li><a href="/profile"><%= user.username %></a></li>
+        <li><a href="/profile/add">Subir Imagen</a></li>
+        <li><a href="/profile/list">Lista de Imagenes</a></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <%if (signinMessage) {%>
+    <!--<div class="mensaje">
+    <strong><p style="margin: 20px;"><%= signinMessage %></p></strong>
+  </div>-->
+  <%= signinMessage %>
+<!--
+  <style>
+    .mensaje{
+        margin: auto;
+        padding: 20px;
+    }
+    .mensaje p{
+          background-color: red;
+          padding: 20px;
+          width: 90%;
+
+          color: white;
+        }
+  </style>
+-->
+  <% } %>
+  <%if (signupMessage) {%>
+    <!--<div class="mensaje">
+    <strong><p style="background-color: red;"> <%= signupMessage %></p></strong>
+  </div>-->
+  <%= signupMessage %>
+
+  <% } %>
+
+  <%- body %>
+
+  <div class="footer">
+    <span><a href="https://diazfabio18.github.io/Tmotn/">Tmotn |</a>   <a href="https://github.com/diazfabio18?tab=repositories">Github</a> </span>
+
+    <ul class="menus">
+      <% if (!user) { %>
+        <!-- Si no hay ususario logueado-->
+      <li><a href="/signin">Login</a></li>
+      <li><a href="https://diazfabio18.github.io/Tmotn/">Tmotn</a></li>
+      <% } %>
+    </ul>
+
+  </div>
+
+
+</div>
+
+  <style>
+html {
+  min-height: 100%;
+  position: relative;
+}
+    body{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    }
+    
+    .containerq{
+        width: 100%;
+        /*background: black;*/
+        margin: auto;
+        /*background: red;*/
+    }
+
+    .headerq{
+    background: orange;
+    display: flex;
+    width: 100%;
+    font-size: 22px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+    .logo{
+        width: 400px;
+    }
+
+    .logo img{
+        width: 60px;
+    }
+
+    .logo a{
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        float: left;
+    }
+
+    #spaces{
+        width: 20%;
+    }
+    .menus{
+        min-width: 60%;
+        text-align: end;
+        margin-bottom: 0;
+    }
+
+    .menus li{
+        display: inline-block;
+    }
+
+    .menus a{
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        overflow: hidden;
+        
+        background-color: rgb(255, 179, 1);
+    }
+
+    .menus a:hover{
+        background: green;
+    }
+
+    .footer{
+    /*PAra que los elementos no se salgan del container*/
+    overflow: hidden;
+    display: flex;
+    background: orange;
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+
+    padding-top: 5px;
+}
+
+.footer span{
+    width: 20%;
+    margin: auto;
+    
+    padding: 20px;
+
+    font-size: 25px;
+}
+
+.footer span a{
+    text-decoration: none;
+    color: white;
+}
+
+    @media(max-width: 900px){
+    .headerq{
+        display: block;
+        align-items: center;
+    }
+
+    .logo{
+        margin: auto;
+        width: 200px;
+    }
+
+    .menus{
+        text-align: center;
+    }
+
+    .menus li{
+        padding: 20px;
+        
+    }
+
+    #spaces{
+        width:0;
+    }
+  }
+
+    @media(max-width: 600px){
+    
+      body{
+        /*margin: 0;
+        padding: 0;*/
+        margin: 0;
+        padding: 0;
+        margin-bottom: 200px;
+        background: url(/css/garden_profile.jpg) no-repeat center top;
+        background-size: cover;
+        font-family: sans-serif;
+        /*height: 100vh;*/
+        
+      }
+
+    .menus{
+        background: greenyellow;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .menus li{
+        display: block;
+        padding: 2px;
+        margin-bottom: 0;
+        width: 100%;
+        text-align: center;
+        background: palevioletred;
+        
+    }
+
+    
+
+    .menus li a{
+        width: 100%;
+        
+        display: block;
+    }
+
+    .footer{
+        display: inline-block;
+        width: 100%;
+    }
+
+    .footer span{
+        margin-left: 35%;
+    }
+    
+  }
+    
+</style>
+
+
+  <% if (user) { %>
+    <style>
+      body{
+        /*margin: 0;
+        padding: 0;*/
+        margin: 0;
+        padding: 0;
+        margin-bottom: 50px;
+        background: url(/css/garden_profile.jpg) no-repeat center top;
+        background-size: cover;
+        font-family: sans-serif;
+        /*height: 100vh;*/
+        
+      }
+      </style>
+    <%}%>
+
+</body>
+</html>

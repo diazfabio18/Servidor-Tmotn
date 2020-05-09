@@ -1,0 +1,218 @@
+<% layout('layouts/main') %>
+
+
+<!--
+<h1>Bienvenido a Tmotn Admin</h1>
+
+<style>
+    body{
+        margin: 0;
+    padding: 0;
+    
+        background: url(/css/puente.jpg) no-repeat center top;
+        background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    }
+    h1{
+        color: white;
+        text-align: center;
+        background: blue;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+</style>
+-->
+
+<div class="posicion" >
+
+    <img src="corazon_cesped.jpg" width="100%" height="" id="puente" alt="">
+
+    <strong><h1>Número 30</h1></strong>
+        <strong><h2>¡Bienvenidos a Tmotn Admin!</h2></strong>
+        <strong><p>En este sitio puedes subir tus imagenes</p></strong>
+</div>
+
+    <div id="barra">
+    <h1>Explora los diferentes números</h1>
+    <p id="par">Esta página de Administración de Tmotn fue montada en un servidor en la nube
+        para que puedas subir imagenes y videos &#128522 .
+        Un sitio seguro y especial para nosotros. La vista gráfica debe ser mejorada.
+        Todas las imagenes e información de cada post es almacena en base de datos en la nube y almacenamiento en Cloudinary   
+    </p>
+</div>
+
+    <div class="row">
+
+        
+
+        <div class="col">
+            <h2>Visita tu perfil</h2>
+            <img src="perfil.jpg" alt="">
+            <p>Una cuenta creada para subir las imagenes que quieras! Que estás esperando?</p>
+            <a href="/profile">Perfil</a>
+        </div>
+        <div class="col">
+            <h2>Explora mis números</h2>
+            <img src="number_real.jpeg" alt="">
+            <p>A través de ellos puedes descubrir grandes cosas. En constante aumento, así que no te lo pierdas!</p>
+            <a href="https://diazfabio18.github.io/Tmotn/numeros.html">Numeros</a>
+        </div>
+        <div class="col">
+            <h2>Tus propios números</h2>
+            <img src="numberj.jpg" alt="">
+            <p>Ahora tú también puedes animarte a publicar, en este espacio privado y fuera de cualquier otra red social. Disfrutalo!</p>
+            <a href="https://diazfabio18.github.io/Tmotn/numberj.html">Numeros J</a>
+        </div>
+    </div>
+
+    <style>
+
+.posicion{
+    position: relative;
+    /*display: inline-block;*/
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    -webkit-text-fill-color: rgb(248, 39, 161);
+    -webkit-text-stroke: 1px white;
+    margin: 0;
+    padding: 0;
+    /*background: green;*/
+    background: rgb(37, 139, 235);
+}
+.posicion p{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 50px;
+    color: white;
+}
+
+.posicion h1{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+}
+
+.posicion h2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+    #puente{
+    padding: 0;
+    margin: 0;
+    max-height: 600px;
+    }
+
+#barra{
+    /*background: black;*/
+    margin: 0;
+    padding: 0;
+}
+
+#barra h1{
+    text-align: center;
+    color: white;
+    background: rgb(37, 139, 235);
+    padding: 20px;
+    margin: 0;
+}
+
+#par{
+    text-align: center;
+    color: white;
+    background: rgb(37, 139, 235,0.9);
+    padding: 20px;
+    margin: 0;
+}
+
+/*Encabezado*/
+.col{
+    width: 280px;
+    /*display: flex;*/
+    display: inline-block;
+    vertical-align: top;
+    
+    text-align: justify;
+    padding: 26px;
+    padding-top: 5px;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+
+    border-radius: 5%;
+    
+    background: rgba(248, 39, 161,0.6);
+}
+
+.col h2{
+    color: white;
+    text-align: center;
+}
+
+.col a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    background: red;
+}
+
+.col p{
+    margin-bottom: 10%;
+    color: white;
+    font-size: 20px;
+}
+
+.col a:hover{
+    background: rgb(247, 57, 57);
+}
+
+.col img{
+    width: 100%;
+}
+
+.row{
+    text-align: center;
+    /*background: rgba(218, 215, 215,0.2);*/
+    background: rgba(255, 1, 242, 1);
+    margin: 0;
+    padding: 0;
+    
+}
+
+@media(max-width: 900px){
+
+    .posicion h1{
+        font-size: 40px;
+    }
+
+    .posicion h2{
+        font-size: 30px;
+    }
+
+    .posicion p{
+        font-size: 24px;
+    }
+
+}
+
+@media(max-width: 600px){
+    .row{
+        display: block;
+        width: 100%;
+        
+    }
+    .col{
+        margin-bottom: 10px;
+        width: 300px;
+    }
+}
+    </style>

@@ -1,0 +1,21 @@
+<%- layout('layouts/main') %>
+
+<link rel="stylesheet" href="/css/master.css" type="text/css">
+
+<div class="login-box">
+  <!--<img src="img/logo.png" class="avatar" alt="Avatar Image">-->
+  <h1>Login</h1>
+  <form action="/signin" method="POST">
+    <!-- USERNAME INPUT -->
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="Nombre de usuario" autofocus>
+    <!-- PASSWORD INPUT -->
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Contraseña">
+    <!-- LOGIN -->
+    <input type="submit" value="Entrar">
+  </form>
+</div>
+
+
+

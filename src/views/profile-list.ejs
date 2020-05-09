@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/logo_pagina_tmotn.png" type="image/x-icon">
+  <meta name="theme-color" content="orange">
+  <title>Tmotn Admin</title>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  -->
+ 
+</head>
+<body>
+
+    <ul class="menuq">
+        <!-- Si hay usuario logueado-->
+        <li><a href="/profile/add">Subir imagen</a></li>
+        <li><a href="/profile">Volver</a></li>
+    </ul>
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    body{
+      margin: 0;
+      padding: 0;
+      margin-bottom: 50px;
+      background: url(/css/garden_profile.jpg) no-repeat center top;
+      background-size: cover;
+      font-family: sans-serif;
+    }
+
+    .menuq{
+        min-width: 60%;
+        text-align: center;
+        margin-top: 20px;
+        /*margin-bottom: 0;*/
+    }
+
+    .menuq li{
+        display: inline-block;
+    }
+
+    .menuq a{
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        overflow: hidden;
+        font-size: 45px;
+        background-color: rgb(255, 179, 1);
+    }
+
+    .menuq a:hover{
+        background: green;
+    }
+
+    </style>
+
+
+<div style="margin: 20px;display: flex;justify-content: center;flex-wrap: wrap; width: 100%;">
+    <% todos.forEach(function (image){ %>
+
+        <% if(!image.imgURL){ 
+            image.imgURL = '/css/imagen-no-disponible.png';
+            }
+            %>
+
+
+    
+      <div class="card" style="max-width: 300px;min-width:250px;margin-left: 5%;margin-bottom: 5%;vertical-align: top;background:rgb(235, 24, 189);">
+        
+        <% if((image.imgURL).substr(-3) == 'mp4'){ %> 
+            <video src="<%= image.imgURL%>"  width="300px" height="200px" controls ></video>
+        <%} else {%>
+            <img src= "<%= image.imgURL%>" class="card-img-top" alt="imagen-no-disponible.png">
+            <% } %>
+        
+
+           <div class="card-body">
+             <h5 class="card-title" style="text-align: center;color: white;"><%= image.numero%> - <%= image.fecha%></h5>
+             <p class="card-text" style="color: white;"><%= image.parrafo%></p>
+             <br><p class="card-text" style="color: yellow;"><a href="<%= image.enlace%>"><%= image.enlace%></a></p>
+             <a href="#" class="btn btn-primary" style="margin-left: 10%; padding: 10px;" onclick="editar('<%= image._id%>')">Editar Info</a>
+             <a href="#" class="btn btn-danger" style="margin-left: 20%; padding: 10px;" onclick="eliminar('<%= image.numero%>','<%= image._id%>')">Eliminar</a>
+           </div>
+       </div>
+    <%})%>
+</div>
+
+
+
+<script>
+    function eliminar(numero,id){
+        var opcion = confirm("¿Seguro quieres eliminar el número "+numero+" ?, si la eliminas, NO hay vuelta atras");
+        if(opcion==true)
+        {
+            location.href='/images/delete/'+id;
+        } 
+    }
+
+    function editar(id){
+        location.href='/images/edit/'+id;
+    }
+</script>
+
+</body>
+</html>

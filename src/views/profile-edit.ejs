@@ -1,0 +1,25 @@
+<%- layout('layouts/main') %>
+
+<link rel="stylesheet" href="/css/master2.css" type="text/css">
+
+<div class="login-box">
+  <h1>Edita la información de tu Post</h1>
+  <form action="/images/edit/edicion" method="POST" enctype="multipart/form-data">
+
+    <label>Fecha</label>
+    <input type="date" name="fecha" id="campo1" value="<%= data.fecha %>">
+
+    <label>Número</label>
+    <input type="number" name="numero" id="campo2" min="0" step="0.1" value="<%= data.numero %>" > 
+ 
+    <label>Enlace o Link</label>
+    <input type="text" name="enlace" id="enlaces" value= '<%= data.enlace %>' >
+
+    <label>Descripción</label>
+    <textarea name="parrafo" id="descripcion" ><%= data.parrafo %></textarea>
+
+    <input type="submit" value="Editar" id="Boton" >
+
+    <input type="text" name="identificacion" value="<%= data._id %>" style="visibility:hidden">
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<%- layout('layouts/main') %>
+
+<!--<form action="images/add" method="post" enctype="multipart/form-data">-->
+
+<link rel="stylesheet" href="/css/master2.css" type="text/css">
+
+<div class="login-box">
+  <h1>Sube tu imagen!</h1>
+  <form action="imagenes/add" method="POST" enctype="multipart/form-data">
+
+    <label>Ingresa una fecha</label>
+    <input type="date" name="fecha" id="campo1" value="2019-08-01" >
+
+    <label>Ingresa un número</label>
+    <input type="number" name="numero" id="campo2" min="0" step="0.1" value="<%= numero1 + 0.1 %>" placeholder="ingresa un numero (?" onkeyup="Habilitar()"> 
+    <!--<input type="number" name="alt" >-->
+
+    <label>Elige una imagen</label>
+    <input type="file" name="image" id="campo3" onchange="Habilitar()" accept="image/png, image/jpg, image/jpeg, image/gif, video/mp4">
+
+    <label>(Opcional) Ingresa un link</label>
+    <input type="text" name="enlace" placeholder="enlace" >
+
+    <label>(Opcional) Ingresa una descripcion</label>
+    <textarea name="parrafo" style="width:100%;height: 60px;"></textarea>
+
+    <input type="submit" value="Subir" id="Boton" disabled="true">
+  </form>
+</div>
+
+<script>
+    var date = new Date();
+    var currentDate = date.toISOString().slice(0,10);
+
+    var dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = currentDate;
+</script>
+
+<script>
+  function Habilitar(){
+      var camp1 = document.getElementById("campo1");
+      var camp2 = document.getElementById("campo2");
+      var camp3 = document.getElementById("campo3");
+      var boton = document.getElementById("Boton");
+
+      if(camp1.value && camp2.value && camp3.value)
+      {
+          boton.disabled = false;
+      }
+      else{
+          boton.disabled = true;
+      }
+  }
+</script>
