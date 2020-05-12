@@ -48,7 +48,7 @@ passport.use('local-signin', new LocalStrategy({
     if(!user) {
       return done(null, false, req.flash('signinMessage', 'Usuario no encontrado'));
     }
-    const valor = await user.validarcontrasenia(password);
+    const valor =  await user.validarcontrasenia(password);
     if(!valor) {
       return done(null, false, req.flash('signinMessage', 'Contraseña incorrecta'));
     }

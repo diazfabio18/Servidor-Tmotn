@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
 
+const cors = require('cors'); /* peticiones desde otros dominios */
+
 /* ***** */
 const engine = require('ejs-mate');
 const flash = require('connect-flash');
@@ -29,6 +31,7 @@ app.set('view engine', 'ejs');
 
 //Middlewars
 app.use(morgan('dev'));
+app.use(cors()); /*evito problemas de cors */
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
@@ -61,12 +64,18 @@ app.use(passport.session());
   });
 /* *************** */
 
+/* middewlare paara vuejs mdo historia*/
+const history = require('connect-history-api-fallback');
+app.use(history());
+/* sitio web statico */
+app.use(express.static(path.join(__dirname,'dist')));
+
 //Rutas
 app.use(require('./routes/routes'));
 
 /***** */
 app.use(require('./routes/logueo'));
 /***** */
-app.use(express.static(__dirname + '/publico'));
+//app.use(express.static(__dirname + '/publico'));
 //exporto el modulo app
 module.exports = app;

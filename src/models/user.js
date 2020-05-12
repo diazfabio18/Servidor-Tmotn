@@ -19,8 +19,8 @@ userSchema.methods.encriptacion = async (password)=>{
     return bcrypt.hash(password, salt);
 } 
 
-userSchema.methods.validarcontrasenia = function (password){
-    return bcrypt.compare(password, this.password);
+userSchema.methods.validarcontrasenia = async function (password){
+    return await bcrypt.compare(password, this.password);
 }
 
 module.exports = model('user',userSchema);

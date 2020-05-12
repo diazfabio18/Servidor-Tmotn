@@ -65,7 +65,7 @@ function conversion(dato1){
   return dateStr
 }
 
-router.get('/perfecto', isAuthenticated, (req,res,next) => {
+router.get('/perfecto', (req,res,next) => {
   res.redirect('/profile');
 });
 
