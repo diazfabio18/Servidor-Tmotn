@@ -16,9 +16,6 @@ cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret:process.env.CLOUDINARY_API_SECRET
-    /*cloud_name: 'dynuxoctm',
-    api_key: '226813993954677',
-    api_secret:'_HG5hTTep4uWCQj1Y7Fdi1czKls'*/
 });
 
 const fs = require('fs-extra');
