@@ -33,7 +33,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(cors()); /*evito problemas de cors */
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
 //Configuracion de destino cuando multer obtiene una image
 const storage = multer.diskStorage({
