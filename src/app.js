@@ -65,8 +65,8 @@ app.use(passport.session());
 /* *************** */
 
 /* middewlare paara vuejs mdo historia*/
-const history = require('connect-history-api-fallback');
-app.use(history());
+//const history = require('connect-history-api-fallback');
+//app.use(history());
 /* sitio web statico */
 //app.use(express.static(path.join(__dirname,'dist')));
 
