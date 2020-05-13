@@ -32,7 +32,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 //const uri = 'mongodb://localhost:27017/mibase'; /* conexion local */
 //const uri = 'mongodb+srv://fabio:tmotn23xj@clustertmotn-vvcw8.mongodb.net/tmotn?retryWrites=true&w=majority';
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_NOMBRE;
 
 const options = {
     useNewUrlParser: true, 
