@@ -36,7 +36,7 @@ router.get('/images/add',(req,res)=>{
 });*/
 
 router.get('/images/all', async(req,res)=>{
-    const todos = await media_model.find().limit(2);
+    const todos = await media_model.find();
     res.status(200).json(todos);
 });
 
