@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="/logo_pagina_tmotn.png" type="image/x-icon">
   <meta name="theme-color" content="orange">
+  <meta name="viewport" content="width=device-width"/>
   <title>Tmotn Admin</title>
   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   -->
@@ -205,19 +206,27 @@ html {
     }
   }
 
-    @media(max-width: 600px){
+    @media (max-width: 500px) {
     
+      html{
+        width: 100%;
+      }
+
       body{
         /*margin: 0;
         padding: 0;*/
         margin: 0;
         padding: 0;
-        margin-bottom: 200px;
+        margin-bottom: 600px;
         background: url(/css/garden_profile.jpg) no-repeat center top;
         background-size: cover;
         font-family: sans-serif;
         /*height: 100vh;*/
         
+      }
+
+      .headerq{
+        width: 100%;
       }
 
     .menus{
@@ -245,8 +254,10 @@ html {
     }
 
     .footer{
-        display: inline-block;
+        /*display: inline-block;
         width: 100%;
+        margin-top: 1000px;*/
+        display: none;
     }
 
     .footer span{
