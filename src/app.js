@@ -68,7 +68,7 @@ app.use(passport.session());
 const history = require('connect-history-api-fallback');
 app.use(history());
 /* sitio web statico */
-app.use(express.static(path.join(__dirname,'dist')));
+//app.use(express.static(path.join(__dirname,'dist')));
 
 //Rutas
 app.use(require('./routes/routes'));
@@ -76,6 +76,6 @@ app.use(require('./routes/routes'));
 /***** */
 app.use(require('./routes/logueo'));
 /***** */
-//app.use(express.static(__dirname + '/publico'));
+app.use(express.static(__dirname + '/publico'));
 //exporto el modulo app
 module.exports = app;
