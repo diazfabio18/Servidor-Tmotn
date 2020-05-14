@@ -68,16 +68,12 @@ router.get('/perfecto', (req,res,next) => {
 
 router.get('/profile',isAuthenticated, async (req, res, next) => {
   
-  const dato = await user_model.find({username: 'julieta'});
 
-  const dato1 = dato[0].ult_conexion;
-
-  const dateStr = conversion(dato1);
-  const dateFabio = conversion(req.user.ult_conexion);
+  const dateUser = conversion(req.user.ult_conexion);
 
   const info = {
     nombre: req.user.username,
-    ult_conexion: dateFabio,
+    ult_conexion: dateUser,
     data: dateStr
   };
   res.render('profile',{info});

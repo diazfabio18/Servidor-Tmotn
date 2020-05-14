@@ -1,5 +1,5 @@
 const {Schema, model} = require('mongoose');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs'); //modulo para encriptacion de contraseña
 
 //modelo de documento para la coleccion users
 const userSchema = new Schema({
